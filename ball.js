@@ -44,10 +44,37 @@ function moveBall(){
 		}
 
 	}
-	//paddle
+	//paddle collision
 	if(y + dy > canvas.height - ballRadius - paddleHeight){
-		if(x > paddleX && x < paddleX + paddleWidth){
-			dy = -dy;
+		if(dx > 0){
+			if(x > paddleX && x < paddleX + (paddleWidth/4)){
+				dx = -1;
+				dy = -3;
+			}else if(x > paddleX + (paddleWidth/4) && x < paddleX + (paddleWidth*2)/4){
+				dx = 1;
+				dy = -3;
+			}else if(x > paddleX + (paddleWidth*2)/4 && x < paddleX + (paddleWidth*3)/4){
+				dx = 2;
+				dy = -2;
+			}else if(x > paddleX + (paddleWidth*3)/4 && x < paddleX + paddleWidth){
+				dx = 3;
+				dy = -1;
+			}
+		} else if(dx < 0){
+			if(x > paddleX && x < paddleX + (paddleWidth/4)){
+				dx = -3;
+				dy = -1;
+			}else if(x > paddleX + (paddleWidth/4) && x < paddleX + (paddleWidth*2)/4){
+				dx = -2;
+				dy = -2;
+			}else if(x > paddleX + (paddleWidth*2)/4 && x < paddleX + (paddleWidth*3)/4){
+				dx = -1;
+				dy = -3;
+			}else if(x > paddleX + (paddleWidth*3)/4 && x < paddleX + paddleWidth){
+				dx = 1;
+				dy = -3;
+			}
+
 		}
 	}
 	//left of screen
