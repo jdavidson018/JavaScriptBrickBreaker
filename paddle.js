@@ -35,6 +35,8 @@ function keyDownHandler(e){
 		rightPressed = true;
 	}else if(e.keyCode == 37){
 		leftPressed = true;
+	}else if(e.keyCode == 32){
+		launch = true;
 	}
 }
 

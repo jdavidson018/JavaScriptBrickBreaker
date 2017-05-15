@@ -17,4 +17,3 @@ function draw(){
 	drawBricks();
 	collisionDetection();
 }
-
